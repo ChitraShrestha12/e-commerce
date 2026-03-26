@@ -16,5 +16,12 @@ class AuthController extends Controller
             "email" => ['required', 'email', 'unique:users,email'],
             "password" => ['required', Password::min(6)->mixedCase()->letters()->numbers()->symbols(), 'confirmed'],
         ]);
+        if ($userValidate->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation failed',
+                'errors' => $userValidate->errors()
+            ], 422);
+        }
     }
 }
