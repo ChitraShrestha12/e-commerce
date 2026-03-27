@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 
@@ -26,34 +27,61 @@ class AuthController extends Controller
         }
         try {
             $user = User::create([
-            "full_name" => $request->full_name,
-            "email" => $request->email,
-            "password" => $request->password,
-        ]);
+                "full_name" => $request->full_name,
+                "email" => $request->email,
+                "password" => $request->password,
+            ]);
             return response()->json([
                 'success' => true,
                 'message' => 'User registered successfully',
                 'user' => $user
             ], 201);
-        
         } catch (\Throwable $th) {
             return response()->json([
                 'success' => false,
-                'message' => 'User registration failed'
-            ],500);
+                'message' => 'User registration failed',
+                'error' => $th->getMessage()
+            ], 500);
         }
     }
-  public function Login(Request $request){
-    $validator = Validator::make($request->all(), [
-            "email" => ['required', 'email'],
-            "password" => ['required','confirmed'],
-        ]);
-        if($validator->fails()){
+    public function Login(Request $request)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                "email" => ['required', 'email'],
+                "password" => ['required'],
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Validation failed',
+                    'errors' => $validator->errors()
+                ], 422);
+            }
+
+            $credentials = $request->only('email', 'password');
+            if (Auth::attempt($credentials)) {
+                $user = Auth::user();
+                $token = $user->createToken('api_token')->plainTextToken;
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Login successful',
+                    'user' => $user,
+                    'token' => $token
+                ], 200);
+            }
+
             return response()->json([
                 'success' => false,
-                'message' => 'Validation failed',
-                'errors' => $validator->errors()
-            ],422);
+                'message' => 'Invalid email or password'
+            ], 401);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong',
+                'error' => $e->getMessage()
+            ], 500);
         }
-  }
+    }
 }
