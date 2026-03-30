@@ -68,7 +68,8 @@ class AuthController extends Controller
                     'success' => true,
                     'message' => 'Login successful',
                     'user' => $user,
-                    'token' => $token
+                    'token' => $token,
+                    'token_type' => 'bearer'
                 ], 200);
             }
 
@@ -76,6 +77,23 @@ class AuthController extends Controller
                 'success' => false,
                 'message' => 'Invalid email or password'
             ], 401);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+    public function Logout(Request $request)
+    {
+        try {
+            $user = $request->user();
+            $user->tokens()->delete();
+            return response()->json([
+                'status' => true,
+                'message' => "Successfully logout!",
+            ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
