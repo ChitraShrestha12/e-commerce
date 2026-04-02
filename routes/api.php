@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/signup', [AuthController::class, 'SignUp']);
-Route::post('/login', [AuthController::class, 'Login']);
-Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'Logout']);
+Route::post('/signup', [AuthController::class, 'signUp']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
+Route::get('/products',[ProductController::class,'allProducts']);

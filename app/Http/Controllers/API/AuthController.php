@@ -11,7 +11,7 @@ use Illuminate\Validation\Rules\Password;
 
 class AuthController extends Controller
 {
-    public function SignUp(Request $request)
+    public function signUp(Request $request)
     {
         $validator = Validator::make($request->all(), [
             "full_name" => ['required'],
@@ -44,7 +44,7 @@ class AuthController extends Controller
             ], 500);
         }
     }
-    public function Login(Request $request)
+    public function login(Request $request)
     {
         try {
             $validator = Validator::make($request->all(), [
@@ -85,7 +85,7 @@ class AuthController extends Controller
             ], 500);
         }
     }
-    public function Logout(Request $request)
+    public function logout(Request $request)
     {
         try {
             $user = $request->user();
