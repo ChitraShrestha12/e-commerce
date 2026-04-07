@@ -36,11 +36,11 @@ class AuthController extends Controller
                 'message' => 'User registered successfully',
                 'user' => $user
             ], 201);
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
                 'message' => 'User registration failed',
-                'error' => $th->getMessage()
+                'error' => $e->getMessage()
             ], 500);
         }
     }
