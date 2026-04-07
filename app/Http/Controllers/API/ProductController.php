@@ -18,8 +18,8 @@ class ProductController extends Controller
         return response()->json([
             "status" => true,
             "message" => "All Products",
-            "products"=>$products
-        ],200);        
+            "products" => $products
+        ], 200);
     }
 
     /**
@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $productValidate = Validator::make($request->all(),[
+        $productValidate = Validator::make($request->all(), [
             "name" => ['required'],
             "price" => ['required'],
             "slug" => ['required'],
@@ -35,12 +35,12 @@ class ProductController extends Controller
             'product_img_path' => ['required'],
             'category_id' => ['required']
         ]);
-        if($productValidate->fails()){
-           return response()->json([
-            "status" => false,
-            "message" => "Validation was failed!",
-            "errors" => $productValidate->errors()
-           ]) ;
+        if ($productValidate->fails()) {
+            return response()->json([
+                "status" => false,
+                "message" => "Validation was failed!",
+                "errors" => $productValidate->errors()
+            ]);
         }
         $product = Product::create([
             "name" => $request->name,
@@ -51,10 +51,10 @@ class ProductController extends Controller
             "category_id" => $request->category_id
         ]);
         return response()->json([
-            "status"=>true,
-            "message"=>"Successfully create product item.",
-            "product"=>$product
-        ],201);
+            "status" => true,
+            "message" => "Successfully create product item.",
+            "product" => $product
+        ], 201);
     }
 
     /**
@@ -62,7 +62,18 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::with("category")->find($id);
+        if (!$product) {
+            return response()->json([
+                "status" => false,
+                "message" => "Product not found",
+            ], 404);
+        }
+        return response()->json([
+            "status" => true,
+            "message" => "Successfully fetch product.",
+            "product" => $product
+        ],200);
     }
 
     /**
