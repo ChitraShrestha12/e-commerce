@@ -96,12 +96,21 @@ class ProductController extends Controller
                 "errors" => $validate->errors()
             ]);
         }
-        $product->update($validate->validated());
-        return response()->json([
-            "status" => true,
-            "message" => "Product successfully updated",
-            "product" => $product,
-        ], 200);
+        try {
+            $product->update($validate->validated());
+            return response()->json([
+                "status" => true,
+                "message" => "Product successfully updated",
+                "product" => $product,
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                "status" => false,
+                "message" => "Server error occurred",
+                "error" => $e->getMessage(),
+                "error line no. " => $e->getLine()
+            ], 500);
+        }
     }
 
     /**

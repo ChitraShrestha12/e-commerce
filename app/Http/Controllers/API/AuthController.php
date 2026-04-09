@@ -26,11 +26,7 @@ class AuthController extends Controller
             ], 422);
         }
         try {
-            $user = User::create([
-                "full_name" => $request->full_name,
-                "email" => $request->email,
-                "password" => $request->password,
-            ]);
+            $user = User::create($validator->validated());
             return response()->json([
                 'success' => true,
                 'message' => 'User registered successfully',
