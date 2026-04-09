@@ -4,13 +4,12 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ProductController extends Controller
+class AdminController extends Controller
 {
-    protected function getFindOrFail($id)
+   protected function getFindOrFail($id)
     {
         return Product::with("category")->findOrFail($id);
     }
@@ -31,10 +30,10 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(), [
-            "name" => ['required' | 'string'],
-            "price" => ['required' | 'numeric'],
-            "slug" => ['required' | 'string'],
-            "description" => ['required' | 'string'],
+            "name" => ['required', 'string'],
+            "price" => ['required', 'numeric'],
+            "slug" => ['required', 'string'],
+            "description" => ['required', 'string'],
             'product_img_path' => ['required'],
             'category_id' => ['required']
         ]);
@@ -43,7 +42,7 @@ class ProductController extends Controller
                 "status" => false,
                 "message" => "Validation failed",
                 "errors" => $validate->errors()
-            ]);
+            ], 422);
         }
         try {
             $product = Product::create($validate->validated());
@@ -52,7 +51,7 @@ class ProductController extends Controller
                 "message" => "Product created successfully!",
                 "product" => $product
             ], 201);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return response()->json([
                 "status" => false,
                 "message" => "Server error occurred",
@@ -82,10 +81,10 @@ class ProductController extends Controller
     {
         $product = $this->getFindOrFail($id);
         $validate = Validator::make($request->all(), [
-            "name" => ['required'],
-            "price" => ['required'],
-            "slug" => ['required'],
-            "description" => ['required'],
+            "name" => ['required', 'string'],
+            "price" => ['required', 'numeric'],
+            "slug" => ['required', 'string'],
+            "description" => ['required', 'string'],
             'product_img_path' => ['required'],
             'category_id' => ['required']
         ]);
@@ -124,7 +123,7 @@ class ProductController extends Controller
             return response()->json([
                 "status" => true,
                 "message" => "Product deleted successfully!",
-            ], 200);
+            ], 204);
         }
     }
 }
