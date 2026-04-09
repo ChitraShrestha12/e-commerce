@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SaveProductRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -27,25 +26,10 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SaveProductRequest $request)
     {
-        $validate = Validator::make($request->all(), [
-            "name" => ['required', 'string'],
-            "price" => ['required', 'numeric'],
-            "slug" => ['required', 'string'],
-            "description" => ['required', 'string'],
-            'product_img_path' => ['required'],
-            'category_id' => ['required']
-        ]);
-        if ($validate->fails()) {
-            return response()->json([
-                "status" => false,
-                "message" => "Validation failed",
-                "errors" => $validate->errors()
-            ], 422);
-        }
         try {
-            $product = Product::create($validate->validated());
+            $product = Product::create($request->validated());
             return response()->json([
                 "status" => true,
                 "message" => "Product created successfully!",
@@ -77,26 +61,11 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(SaveProductRequest $request, string $id)
     {
         $product = $this->getFindOrFail($id);
-        $validate = Validator::make($request->all(), [
-            "name" => ['required', 'string'],
-            "price" => ['required', 'numeric'],
-            "slug" => ['required', 'string'],
-            "description" => ['required', 'string'],
-            'product_img_path' => ['required'],
-            'category_id' => ['required']
-        ]);
-        if ($validate->fails()) {
-            return response()->json([
-                "status" => false,
-                "message" => "Validation failed",
-                "errors" => $validate->errors()
-            ]);
-        }
         try {
-            $product->update($validate->validated());
+            $product->update($request->validated());
             return response()->json([
                 "status" => true,
                 "message" => "Product successfully updated",
