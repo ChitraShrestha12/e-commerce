@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SaveProductRequest;
+use App\Http\Requests\Product\SaveProductRequest;
 use App\Models\Product;
 
 class AdminController extends Controller
