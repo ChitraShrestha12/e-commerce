@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignUpRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -28,23 +28,10 @@ class AuthController extends Controller
             ], 500);
         }
     }
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                "email" => ['required', 'email'],
-                "password" => ['required'],
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Validation failed',
-                    'errors' => $validator->errors()
-                ], 422);
-            }
-
-            $credentials = $request->only('email', 'password');
+            $credentials = $request->validated();
             if (Auth::attempt($credentials)) {
                 $user = Auth::user();
                 $token = $user->createToken('api_token')->plainTextToken;
