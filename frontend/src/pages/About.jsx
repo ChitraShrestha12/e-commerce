@@ -2,6 +2,7 @@ import "../components/about/about.css";
 import HeroLeftContent from "../components/about/HeroLeftContent";
 import HeroRightContent from "../components/about/HeroRightContent";
 import MissionSection from "../components/about/MissionSection";
+import ValuesSection from "../components/category/ValuesSection";
 
 function About() {
   return (
@@ -12,55 +13,10 @@ function About() {
           <HeroRightContent />
         </div>
       </section>
-
       <div className="container">
         <MissionSection />
       </div>
-
-      {/* <!-- VALUES SECTION --> */}
-      <div className="values-section">
-        <div className="container">
-          <div className="section-title">
-            <h2>Core Values That Drive Us</h2>
-            <p>
-              The principles behind every decision, every product, every
-              interaction.
-            </p>
-          </div>
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-icon">
-                <i className="fas fa-gem"></i>
-              </div>
-              <h3>Radical Honesty</h3>
-              <p>Transparent pricing, real reviews, no hidden fees — always.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">
-                <i className="fas fa-bolt"></i>
-              </div>
-              <h3>Blazing Speed</h3>
-              <p>Same-day dispatch, fast shipping, instant customer care.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">
-                <i className="fas fa-leaf"></i>
-              </div>
-              <h3>Eco-Forward</h3>
-              <p>
-                Carbon-neutral shipping and sustainable packaging since 2024.
-              </p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">
-                <i className="fas fa-heart"></i>
-              </div>
-              <h3>Community First</h3>
-              <p>Empowering local sellers and giving back to global causes.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ValuesSection />
 
       <div className="container">
         {/* <!-- TEAM SECTION --> */}
