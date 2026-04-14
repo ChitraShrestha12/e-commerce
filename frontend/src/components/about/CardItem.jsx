@@ -1,6 +1,6 @@
 import React from "react";
 
-function ValueCard({icon,title,description}) {
+function CardItem({icon,title,description}) {
   return (
     <div className="value-card">
       <div className="value-icon">
@@ -12,4 +12,4 @@ function ValueCard({icon,title,description}) {
   );
 }
 
-export default ValueCard;
+export default CardItem;

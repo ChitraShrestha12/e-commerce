@@ -1,8 +1,9 @@
 import "../components/about/about.css";
 import HeroLeftContent from "../components/about/HeroLeftContent";
 import HeroRightContent from "../components/about/HeroRightContent";
+import InfoSection from "../components/about/InfoSection";
 import MissionSection from "../components/about/MissionSection";
-import ValuesSection from "../components/category/ValuesSection";
+import OurTeam from "../components/about/OurTeam";
 
 function About() {
   return (
@@ -16,52 +17,11 @@ function About() {
       <div className="container">
         <MissionSection />
       </div>
-      <ValuesSection />
+      <InfoSection />
 
       <div className="container">
         {/* <!-- TEAM SECTION --> */}
-        <div className="team-section">
-          <div className="section-title">
-            <h2>Meet the Visionaries</h2>
-            <p>Passionate creators, engineers, and curators behind NovaMart.</p>
-          </div>
-          <div className="team-grid">
-            <div className="team-card">
-              <div className="team-img">
-                <i className="fas fa-user-tie"></i>
-              </div>
-              <h4>Olivia Chen</h4>
-              <p className="team-role">CEO & Founder</p>
-              <span style={{ fontSize: "0.7rem" }}>
-                ex-Amazon, 15yrs retail
-              </span>
-            </div>
-            <div className="team-card">
-              <div className="team-img">
-                <i className="fas fa-laptop-code"></i>
-              </div>
-              <h4>Marcus Wright</h4>
-              <p className="team-role">CTO</p>
-              <span style={{ fontSize: "0.7rem" }}>AI & logistics expert</span>
-            </div>
-            <div className="team-card">
-              <div className="team-img">
-                <i className="fas fa-palette"></i>
-              </div>
-              <h4>Elena Rossi</h4>
-              <p className="team-role">Creative Director</p>
-              <span style={{ fontSize: "0.7rem" }}>Award-winning designer</span>
-            </div>
-            <div className="team-card">
-              <div className="team-img">
-                <i className="fas fa-handshake"></i>
-              </div>
-              <h4>David Okafor</h4>
-              <p className="team-role">Head of Operations</p>
-              <span style={{ fontSize: "0.7rem" }}>Global supply chain</span>
-            </div>
-          </div>
-        </div>
+        <OurTeam />
       </div>
 
       {/* <!-- TESTIMONIALS - MODERN SPLIT LAYOUT, NO ROUNDED CORNERS --> */}
