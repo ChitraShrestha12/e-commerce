@@ -1,19 +1,19 @@
-import React from "react";
-import StatItem from "./StatItem";
+import StatBadge from "../cards/StatBadge";
 
-function MissionStats() {
+
+function HeroStat() {
   const stats = [
     { value: "500K+", label: "Happy Customers" },
     { value: "120+", label: "Countries" },
     { value: "98%", label: "Satisfaction" },
   ];
   return (
-    <div className="mission-stats">
+    <div className="hero-stats-row">
       {stats.map((stat) => {
-        return <StatItem statNumber={stat.value} statLabel={stat.label} />;
+        return <StatBadge statNumber={stat.value} statLabel={stat.label} />;
       })}
     </div>
   );
 }
 
-export default MissionStats;
+export default HeroStat;

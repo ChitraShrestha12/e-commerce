@@ -1,6 +1,6 @@
-import React from "react";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../values/SectionHeader";
 import MemberGrid from "./MemberGrid";
+
 
 function OurTeam() {
   return (
@@ -11,7 +11,7 @@ function OurTeam() {
           "Passionate creators, engineers, and curators behind NovaMart."
         }
       />
-      <MemberGrid />
+      <MemberGrid/>
     </div>
   );
 }

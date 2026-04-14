@@ -1,17 +1,18 @@
 import React from "react";
-import MissionStats from "./MissionStats";
 import MissionContent from "./MissionContent";
+import MissionStats from "./MissionStats";
 import MissionImage from "./MissionImage";
+
 
 function MissionSection() {
   return (
     <>
       <div className="mission-section">
         <div className="mission-content">
-          <MissionContent />
-          <MissionStats />
+          <MissionContent/>
+          <MissionStats/>
         </div>
-        <MissionImage />
+        <MissionImage/>
       </div>
     </>
   );

@@ -48,3 +48,39 @@ export const teamMembers = [
     info: "Global supply chain",
   },
 ];
+
+export const testimonialStats = [
+  {
+    value: "4.92",
+    label: "Average Rating",
+  },
+  {
+    value: "15K+",
+    label: "5-Star Reviews",
+  },
+  {
+    value: "98%",
+    label: "Would Recommend",
+  },
+];
+
+export const customerReviews = [
+  {
+    text: "NovaMart completely changed how I shop online. The quality check is unmatched and delivery always arrives early.",
+    name: "Sarah K.",
+    role: "Verified Buyer",
+    icon: "fas fa-user",
+  },
+  {
+    text: "Their customer support resolved my issue in under 2 hours. That's unheard of! Loyal customer for life.",
+    name: "James M.",
+    role: "Tech Enthusiast",
+    icon: "fas fa-user",
+  },
+  {
+    text: "The curated collections are incredible. I've discovered so many unique brands I wouldn't find elsewhere.",
+    name: "Priya N.",
+    role: "Fashion Blogger",
+    icon: "fas fa-user",
+  },
+];

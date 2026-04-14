@@ -1,5 +1,4 @@
-import React from "react";
-import { teamMembers } from "../../data/aboutData";
+import { teamMembers } from "../../../data/aboutData";
 import MemberCard from "./MemberCard";
 
 function MemberGrid() {

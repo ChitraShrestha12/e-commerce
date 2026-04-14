@@ -1,5 +1,6 @@
 import HeroStat from "./HeroStat";
 
+
 function HeroLeftContent() {
   return (
     <div className="hero-left">
