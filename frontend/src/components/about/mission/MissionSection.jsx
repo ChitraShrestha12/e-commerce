@@ -9,12 +9,12 @@ function MissionSection() {
     triggerOnce:true,
     threshold: 0.2
   });
-  console.log(isVisible);
   return (
     <>
       <div
         ref={ref}
         className={`mission-section ${isVisible ? "motion-fade-up" :""}`}
+        style={{ animationDelay: "0.2s"}}
       >
         <div className="mission-content">
           <MissionContent />

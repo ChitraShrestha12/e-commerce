@@ -1,10 +1,12 @@
 import React from "react";
 import { coreValues } from "../../../data/aboutData";
 import CardItem from "../cards/CardItem";
+import useInView from "../../../hooks/useInView";
 
 function SectionGrid() {
+  const [ref, isVisible] = useInView();
   return (
-    <div className="values-grid">
+    <div ref={ref} className={`values-grid ${isVisible ? "motion-fade-up" : ""}`}>
       {coreValues.map((value) => {
         return (
           <CardItem

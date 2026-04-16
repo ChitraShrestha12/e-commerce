@@ -1,11 +1,16 @@
+import useInView from "../../../hooks/useInView";
 import TestimonialLeft from "./TestimonialLeft";
 import TestimonialsRight from "./TestimonialsRight";
 
 function TestimonialSection() {
+  const [ref, isVisible] = useInView();
   return (
-    <div className="testimonial-split">
-      <TestimonialLeft/>
-      <TestimonialsRight/>
+    <div
+      ref={ref}
+      className={`testimonial-split ${isVisible ? "motion-fade-up" : ""}`}
+    >
+      <TestimonialLeft />
+      <TestimonialsRight />
     </div>
   );
 }

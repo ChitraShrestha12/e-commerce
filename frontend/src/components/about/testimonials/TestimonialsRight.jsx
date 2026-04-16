@@ -5,9 +5,11 @@ import { customerReviews } from "../../../data/aboutData";
 function TestimonialsRight() {
   return (
     <div className="testimonial-right">
-      {customerReviews.map((review) => {
+      {customerReviews.map((review, index) => {
         return (
           <CustomerReview
+            key={index}
+            index={index}
             text={review.text}
             icon={review.icon}
             name={review.text}

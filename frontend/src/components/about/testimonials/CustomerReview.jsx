@@ -1,11 +1,15 @@
 import React from "react";
+import useInView from "../../../hooks/useInView";
 
-function CustomerReview({text,icon,name,role}) {
+function CustomerReview({ text, icon, name, role, index }) {
+  const [ref, isVisible] = useInView();
   return (
-    <div className="testimonial-item">
-      <div className="testimonial-text">
-        {text}
-      </div>
+    <div
+      ref={ref}
+      className={`testimonial-item ${isVisible ? "motion-fade-up" : ""}`}
+      style={{ animationDelay: `${index * 0.4}s` }}
+    >
+      <div className="testimonial-text">{text}</div>
       <div className="testimonial-author">
         <div className="testimonial-avatar">
           <i className={icon}></i>
