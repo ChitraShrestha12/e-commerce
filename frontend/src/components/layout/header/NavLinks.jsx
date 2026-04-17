@@ -7,7 +7,7 @@ function NavLinks() {
     { label: "About", to: "/about" },
     { label: "New", to: "/" },
     { label: "Categories", to: "/" },
-    { label: "Contact", to: "/" },
+    { label: "Contact", to: "/contact" },
   ];
   return (
     <nav>

@@ -1,11 +1,11 @@
 import React from "react";
 
-function HeroRightContent() {
+function HeroRightContent({ image, alt, badge }) {
   return (
     <div className="hero-right">
-      <img src="https://picsum.photos/id/104/600/400" alt="NovaMart team" />
+      <img src={image} alt={alt} />
       <div className="hero-badge">
-        <i className="fas fa-star"></i> Trusted since 2020
+        <i className={badge.icon}></i> {badge.text}
       </div>
     </div>
   );
