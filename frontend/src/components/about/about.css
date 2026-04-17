@@ -218,6 +218,7 @@
   background: var(--bg);
   transition: 0.25s;
   border: 1px solid var(--border);
+  cursor: pointer;
 }
 
 .value-card:hover {
@@ -265,6 +266,7 @@
   padding: 28px 20px;
   border: 1px solid var(--border);
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .team-card:hover {

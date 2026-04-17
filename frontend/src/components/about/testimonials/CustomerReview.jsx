@@ -7,7 +7,7 @@ function CustomerReview({ text, icon, name, role, index }) {
     <div
       ref={ref}
       className={`testimonial-item ${isVisible ? "motion-fade-up" : ""}`}
-      style={{ animationDelay: `${index * 0.4}s` }}
+      style={{ animationDelay: `${index * 0.3}s` }}
     >
       <div className="testimonial-text">{text}</div>
       <div className="testimonial-author">

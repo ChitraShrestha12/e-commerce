@@ -14,7 +14,7 @@ function MissionSection() {
       <div
         ref={ref}
         className={`mission-section ${isVisible ? "motion-fade-up" :""}`}
-        style={{ animationDelay: "0.2s"}}
+        style={{ animationDelay: "0.3s"}}
       >
         <div className="mission-content">
           <MissionContent />
