@@ -1,8 +1,9 @@
-import useInView from "../../hooks/useInView";
-import Button from "../shared/Button";
-import InputField from "../shared/InputField";
-import SelectField from "../shared/SelectField";
-import TextAreaField from "../shared/TextAreaField";
+import { RiInputField } from "react-icons/ri";
+import useInView from "../../../hooks/useInView";
+import SelectField from "../../shared/SelectField";
+import TextAreaField from "../../shared/TextAreaField";
+import Button from "../../shared/Button";
+import InputField from "../../shared/InputField";
 
 function ContactFormSection() {
   const [ref, isVisible] = useInView();
@@ -18,7 +19,7 @@ function ContactFormSection() {
       </p>
 
       <form>
-        <InputField
+        <RiInputField
           label={"Full Name *"}
           type={"text"}
           placeholder={"John Doe"}
@@ -28,14 +29,14 @@ function ContactFormSection() {
           type={"email"}
           placeholder={"hello@example.com"}
         />
-        <SelectField />
+        <SelectField/>
         <InputField
           label={"Message *"}
           type={"email"}
           placeholder={"hello@example.com"}
         />
-        <TextAreaField />
-        <Button />
+        <TextAreaField/>
+        <Button/>
       </form>
     </div>
   );

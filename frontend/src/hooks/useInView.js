@@ -1,9 +1,9 @@
 import { useInView as useIntersectionInView } from "react-intersection-observer";
 
-function useInView(threshold=0.2) {
+function useInView() {
   const { ref, inView } = useIntersectionInView({
     triggerOnce: true,
-    threshold: threshold,
+    threshold: 0,
   });
 
   return [ref, inView];

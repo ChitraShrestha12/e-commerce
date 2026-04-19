@@ -1,6 +1,6 @@
-import useInView from "../../hooks/useInView";
+import useInView from "../../../hooks/useInView";
+import { contactAddress, contactEmail, contactPhone } from "../data/contactData";
 import ContactInfoCard from "./ContactInfoCard";
-import { contactAddress, contactEmail, contactPhone } from "./data/contactData";
 
 function ContactInfoGrid() {
   const [ref, isVisible] = useInView();
