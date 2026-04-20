@@ -1,3 +1,8 @@
+export const aboutValuesHeader = {
+  title: "Core Values That Drive Us",
+  description: "The principles behind every decision, every product, every interaction."
+};
+
 export const coreValues = [
   {
     icon: "fas fa-gem",

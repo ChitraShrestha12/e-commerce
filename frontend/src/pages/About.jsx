@@ -5,8 +5,16 @@ import HeroRightContent from "../components/shared/hero/HeroRightContent";
 import MissionSection from "../components/about/mission/MissionSection";
 import OurTeam from "../components/about/team/OurTeam";
 import TestimonialSection from "../components/about/testimonials/TestimonialSection";
-import InfoSection from "../components/about/values/InfoSection";
-import { aboutHeroLeftData, aboutHeroRightData, aboutHeroStats } from "../components/shared/hero/heroData";
+import {
+  aboutHeroLeftData,
+  aboutHeroRightData,
+  aboutHeroStats,
+} from "../components/shared/hero/heroData";
+import InfoSection from "../components/shared/values/InfoSection";
+import {
+  aboutValuesHeader,
+  coreValues,
+} from "../components/about/data/aboutData";
 
 function About() {
   return (
@@ -28,7 +36,11 @@ function About() {
       <div className="container">
         <MissionSection />
       </div>
-      <InfoSection />
+      <InfoSection
+        title={aboutValuesHeader.title}
+        description={aboutValuesHeader.description}
+        values={coreValues}
+      />
       <div className="container">
         <OurTeam />
       </div>

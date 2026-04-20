@@ -4,17 +4,19 @@ import About from "./pages/About";
 import Footer from "./components/layout/footer/Footer";
 import MainHeader from "./components/layout/header/MainHeader";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
 
 function App() {
   return (
     <>
-      <MainHeader/>
+      <MainHeader />
       <Routes>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact/>} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="careers" element={<Careers />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }

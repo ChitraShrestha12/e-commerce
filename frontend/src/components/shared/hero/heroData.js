@@ -48,3 +48,23 @@ export const contactHeroRightData = {
     text: "Live support 24/7",
   },
 };
+
+export const careerStats = [
+  { value: "500+", label: "Team Members" },
+  { value: "15+", label: "Countries" },
+  { value: "4.8★", label: "Glassdoor Rating" },
+];
+
+export const careerHeroContent = {
+  title: "Build the future of commerce",
+  description: "Join a team of innovators, creators, and problem-solvers who are redefining the online shopping experience for millions worldwide."
+};
+
+export const careerHeroRightData = {
+  image: "https://www.newgenerationjobs.com/images/homebanner-img.png",
+  alt: "Team working together",
+  badge: {
+    icon: "fas fa-rocket",
+    text: "We're hiring!",
+  },
+};

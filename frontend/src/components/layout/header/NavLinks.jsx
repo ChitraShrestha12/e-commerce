@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 function NavLinks() {
   const navLinks = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
-    { label: "New", to: "/" },
-    { label: "Categories", to: "/" },
+    { label: "New", to: "/new" },
+    { label: "Categories", to: "/categories" },
     { label: "Contact", to: "/contact" },
   ];
   return (
@@ -14,9 +14,9 @@ function NavLinks() {
       <div className="container nav">
         {navLinks.map((link, i) => {
           return (
-            <Link key={i} to={link.to}>
+            <NavLink key={i} to={link.to}>
               {link.label}
-            </Link>
+            </NavLink>
           );
         })}
       </div>

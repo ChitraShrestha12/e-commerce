@@ -1,9 +1,9 @@
-import React from "react";
-import SectionHeader from "./SectionHeader";
-import SectionGrid from "./SectionGrid";
 import useInView from "../../../hooks/useInView";
+import SectionGrid from "./SectionGrid";
+import SectionHeader from "./SectionHeader";
 
-function InfoSection() {
+
+function InfoSection({title,description,values}) {
   const [ref, isVisible] = useInView();
   return (
     <div
@@ -13,12 +13,10 @@ function InfoSection() {
     >
       <div className="container">
         <SectionHeader
-          title={"Core Values That Drive Us"}
-          description={
-            "The principles behind every decision, every product, every interaction."
-          }
+          title={title}
+          description={description}
         />
-        <SectionGrid />
+        <SectionGrid values={values}/>
       </div>
     </div>
   );

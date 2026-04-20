@@ -1,5 +1,5 @@
 import useInView from "../../../hooks/useInView";
-import SectionHeader from "../values/SectionHeader";
+import SectionHeader from "../../shared/values/SectionHeader";
 import MemberGrid from "./MemberGrid";
 
 function OurTeam() {
@@ -8,7 +8,7 @@ function OurTeam() {
     <div
       ref={ref}
       className={`team-section ${isVisible ? "motion-fade-up" : ""}`}
-      style={{ animationDelay: "0.3s"}}
+      style={{ animationDelay: "0.3s" }}
     >
       <SectionHeader
         title={"Meet the Visionaries"}
