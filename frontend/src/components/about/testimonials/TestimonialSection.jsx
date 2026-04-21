@@ -5,12 +5,14 @@ import TestimonialsRight from "./TestimonialsRight";
 function TestimonialSection() {
   const [ref, isVisible] = useInView();
   return (
-    <div
-      ref={ref}
-      className={`testimonial-split ${isVisible ? "motion-fade-up" : ""}`}
-    >
-      <TestimonialLeft />
-      <TestimonialsRight />
+    <div className="testimonials">
+      <div
+        ref={ref}
+        className={`testimonial-split ${isVisible ? "motion-fade-up" : ""}`}
+      >
+        <TestimonialLeft />
+        <TestimonialsRight />
+      </div>
     </div>
   );
 }

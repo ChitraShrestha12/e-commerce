@@ -10,7 +10,7 @@ function PerksSection() {
     <div
       ref={ref}
       className={`container ${isVisible ? "motion-fade-up" : ""}`}
-      style={{ animationDelay: "0.3s" }}
+      style={{ animationDelay: "0.4s" }}
     >
       <SectionHeader
         title={perksHeader.title}
