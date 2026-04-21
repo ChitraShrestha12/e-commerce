@@ -5,7 +5,7 @@ export const aboutHeroLeftData = {
 };
 
 export const aboutHeroRightData = {
-  image: "https://picsum.photos/id/104/600/400",
+  image: "https://img.freepik.com/premium-photo/create-high-quality-poster-about-us-social-media-marketing-company-no-text_1091144-43261.jpg?semt=ais_hybrid&w=740&q=80",
   alt: "NovaMart team",
   badge: {
     icon: "fas fa-star",
@@ -20,7 +20,7 @@ export const aboutHeroStats = [
 ];
 
 export const contactHeroLeftData = {
-  title: "We're here to help",
+  title: "We’re here to help you with anything you need",
   description:
     "Have a question, concern, or feedback? Our dedicated support team is ready to assist you with anything you need.",
 };
@@ -41,7 +41,7 @@ export const contactHeroStats = [
 ];
 
 export const contactHeroRightData = {
-  image: "https://picsum.photos/id/104/600/400",
+  image: "https://unblast.com/wp-content/uploads/2020/09/Contact-Us-Vector-Illustration-Part-02-1.jpg",
   alt: "Customer support team",
   badge: {
     icon: "fas fa-headset",
