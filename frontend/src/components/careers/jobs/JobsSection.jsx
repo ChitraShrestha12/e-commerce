@@ -1,8 +1,8 @@
-import React from "react";
-import SectionHeader from "../shared/values/SectionHeader";
-import { jobsSectionHeader } from "./data/careersData";
+import useInView from "../../../hooks/useInView";
+import SectionHeader from "../../shared/values/SectionHeader";
+import { jobsSectionHeader } from "../data/careersData";
 import CareersList from "./CareersList";
-import useInView from "../../hooks/useInView";
+
 
 function JobsSection() {
   const [ref, isVisible] = useInView(0.2);
@@ -17,7 +17,7 @@ function JobsSection() {
           title={jobsSectionHeader.title}
           description={jobsSectionHeader.description}
         />
-        <CareersList />
+        <CareersList/>
       </div>
     </div>
   );

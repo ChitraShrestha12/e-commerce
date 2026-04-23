@@ -3,6 +3,7 @@ import SectionGrid from "./SectionGrid";
 import SectionHeader from "./SectionHeader";
 
 
+
 function InfoSection({title,description,values}) {
   const [ref, isVisible] = useInView();
   return (

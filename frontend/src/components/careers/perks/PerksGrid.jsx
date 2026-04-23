@@ -1,6 +1,6 @@
-import React from "react";
-import { perksList } from "./data/careersData";
+import { perksList } from "../data/careersData";
 import PerkCard from "./PerkCard";
+
 
 function PerksGrid() {
   return (

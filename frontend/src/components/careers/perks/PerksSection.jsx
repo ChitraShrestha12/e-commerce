@@ -1,8 +1,9 @@
-import React from "react";
-import SectionHeader from "../shared/values/SectionHeader";
-import { perksHeader } from "./data/careersData";
+import useInView from "../../../hooks/useInView";
+import SectionHeader from "../../shared/values/SectionHeader";
+import { perksHeader } from "../data/careersData";
 import PerksGrid from "./PerksGrid";
-import useInView from "../../hooks/useInView";
+
+
 
 function PerksSection() {
   const [ref, isVisible] = useInView();
@@ -16,7 +17,7 @@ function PerksSection() {
         title={perksHeader.title}
         description={perksHeader.description}
       />
-      <PerksGrid />
+      <PerksGrid/>
     </div>
   );
 }

@@ -1,8 +1,6 @@
-import React from "react";
-import { useParams } from "react-router";
-import { jobsList } from "./data/careersData";
-import BackButton from "./BackButton";
+import BackButton from "../jobs/BackButton";
 import JobDetailCard from "./JobDetailCard";
+
 
 function JobDetailSection() {
   return (

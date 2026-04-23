@@ -1,9 +1,8 @@
-import React from "react";
+import { useParams } from "react-router";
+import { detailSections, jobsList } from "../data/careersData";
 import JobDetailHeader from "./JobDetailHeader";
 import JobDetailsMeta from "./JobDetailsMeta";
 import JobMetaItem from "./JobMetaItem";
-import { useParams } from "react-router";
-import { detailSections, jobsList } from "./data/careersData";
 import JobApplySection from "./JobApplySection";
 
 function JobDetailCard() {

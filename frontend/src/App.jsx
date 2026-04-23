@@ -5,7 +5,7 @@ import Footer from "./components/layout/footer/Footer";
 import MainHeader from "./components/layout/header/MainHeader";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
-import JobDetailSection from "./components/careers/JobDetailSection";
+import JobDetailSection from "./components/careers/job-detail/JobDetailSection";
 
 function App() {
   return (

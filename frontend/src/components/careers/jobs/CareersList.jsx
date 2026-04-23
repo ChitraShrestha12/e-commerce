@@ -1,6 +1,6 @@
-import React from "react";
-import { jobsList } from "./data/careersData";
+import { jobsList } from "../data/careersData";
 import JobCard from "./JobCard";
+
 
 function CareersList() {
   return (
