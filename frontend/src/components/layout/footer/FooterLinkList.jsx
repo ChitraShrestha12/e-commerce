@@ -10,7 +10,7 @@ function FooterLinkList({ footerLinks }) {
       {footerLinks.map((link,i) => {
         return (
           <li key={i}>
-            <Link to={link.href} onClick={scrollToTop}>
+            <Link to={link.href} onClick={link.onClick}>
               <i className="fas fa-chevron-right"></i> {link.label}
             </Link>
           </li>

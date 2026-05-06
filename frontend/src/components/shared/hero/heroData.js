@@ -5,7 +5,8 @@ export const aboutHeroLeftData = {
 };
 
 export const aboutHeroRightData = {
-  image: "https://img.freepik.com/premium-photo/create-high-quality-poster-about-us-social-media-marketing-company-no-text_1091144-43261.jpg?semt=ais_hybrid&w=740&q=80",
+  image:
+    "https://img.freepik.com/premium-photo/create-high-quality-poster-about-us-social-media-marketing-company-no-text_1091144-43261.jpg?semt=ais_hybrid&w=740&q=80",
   alt: "NovaMart team",
   badge: {
     icon: "fas fa-star",
@@ -41,7 +42,8 @@ export const contactHeroStats = [
 ];
 
 export const contactHeroRightData = {
-  image: "https://unblast.com/wp-content/uploads/2020/09/Contact-Us-Vector-Illustration-Part-02-1.jpg",
+  image:
+    "https://unblast.com/wp-content/uploads/2020/09/Contact-Us-Vector-Illustration-Part-02-1.jpg",
   alt: "Customer support team",
   badge: {
     icon: "fas fa-headset",
@@ -57,7 +59,8 @@ export const careerStats = [
 
 export const careerHeroContent = {
   title: "Build the future of commerce",
-  description: "Join a team of innovators, creators, and problem-solvers who are redefining the online shopping experience for millions worldwide."
+  description:
+    "Join a team of innovators, creators, and problem-solvers who are redefining the online shopping experience for millions worldwide.",
 };
 
 export const careerHeroRightData = {
@@ -66,5 +69,62 @@ export const careerHeroRightData = {
   badge: {
     icon: "fas fa-rocket",
     text: "We're hiring!",
+  },
+};
+
+export const sustainabilityHeroData = {
+  title: "Committed to a greener future",
+  description:
+    "We're on a mission to make e-commerce sustainable — from carbon-neutral shipping to eco-friendly packaging and ethical sourcing.",
+  stats: [
+    {
+      value: "50K+",
+      label: "Trees Planted",
+    },
+    {
+      value: "100%",
+      label: "Renewable Energy",
+    },
+    {
+      value: "2030",
+      label: "Net Zero Goal",
+    },
+  ],
+  image:
+    "https://thumbs.dreamstime.com/b/team-business-energy-use-sustainability-elements-energy-sources-sustainable-team-business-energy-use-sustainability-elements-120464617.jpg",
+  alt: "Sustainability team working together",
+  badge: {
+    icon: "fas fa-leaf",
+    text: "Eco-Friendly",
+  },
+};
+
+export const faqHeroData = {
+  title: "Got questions? We've got answers",
+  description:
+    "Find quick answers to common questions about orders, shipping, returns, and more. Can't find what you're looking for? Our support team is here to help 24/7.",
+  stats: [
+    {
+      value: "24/7",
+      label: "Support Available",
+    },
+    {
+      value: "<2hrs",
+      label: "Avg Response Time",
+    },
+    {
+      value: "98%",
+      label: "Satisfaction Rate",
+    },
+  ],
+};
+
+export const faqHeroRightData = {
+  image:
+    "https://img.magnific.com/free-photo/frequently-asked-questions-solution-concept_53876-125171.jpg?semt=ais_hybrid&w=740&q=80",
+  alt: "Customer support",
+  badge: {
+    icon: "fas fa-headset",
+    text: "Live support 24/7",
   },
 };

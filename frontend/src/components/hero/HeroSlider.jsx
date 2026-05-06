@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "../shared/Image";
 
 function HeroSlider() {
   return (
@@ -19,7 +20,7 @@ function HeroSlider() {
         <SwiperSlide>
           <div className="slide">
             <div className="overlay"></div>
-            <img src="https://picsum.photos/id/1018/1200/400" />
+            <Image src={"https://picsum.photos/id/1018/1200/400"} alt={"Hero-Image"}/>
             <div className="caption">
               <h1>Shop Smart, Live Better 🛒</h1>
               <p>Best deals on electronics</p>
@@ -30,7 +31,7 @@ function HeroSlider() {
         <SwiperSlide>
           <div className="slide">
             <div className="overlay"></div>
-            <img src="https://picsum.photos/id/1015/1200/400" />
+            <Image src={"https://picsum.photos/id/1015/1200/400"} alt={"Hero-Image"}/>
             <div className="caption">
               <h1>🔥 Today’s Deal</h1>
               <p>Up to 50% off</p>
@@ -41,7 +42,7 @@ function HeroSlider() {
         <SwiperSlide>
           <div className="slide">
             <div className="overlay"></div>
-            <img src="https://picsum.photos/id/1016/1200/400" />
+            <Image src={"https://picsum.photos/id/1016/1200/400"} alt={"Hero-Image"}/>
             <div className="caption">
               <h1>New Arrivals</h1>
               <p>Latest gadgets, fashion & lifestyle products</p>

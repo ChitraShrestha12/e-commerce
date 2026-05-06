@@ -5,8 +5,7 @@ import FooterLinkList from "./FooterLinkList";
 function CategoryLinks() {
   const categoryLinks = [
     { label: "Electronics", href: "#" },
-    { label: "Men's Fashion", href: "#" },
-    { label: "Women's Wear", href: "#" },
+    { label: "Gaming", href: "#" },
     { label: "Home & Living", href: "#" },
     { label: "Sports & Outdoors", href: "#" },
   ];

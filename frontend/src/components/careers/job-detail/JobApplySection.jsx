@@ -5,7 +5,6 @@ function JobApplySection() {
   function msg() {
     alert("Thank you for your interest!");
     navigate("/careers");
-    window.scrollTo(0,0)
   }
   return (
     <div className="apply-section">

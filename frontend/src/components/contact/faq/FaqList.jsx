@@ -1,12 +1,12 @@
 import React from "react";
-import FaqItem from "./FaqItem";
 import { faqList } from "../data/contactData";
+import AccordionItem from "../../shared/AccordionItem";
 
 function FaqList() {
   return (
     <div className="faq-grid">
-      {faqList.map((fap,i) => {
-        return <FaqItem faq={fap} key={i}/>;
+      {faqList.map((fap, i) => {
+        return <AccordionItem faq={fap} key={i} />;
       })}
     </div>
   );
